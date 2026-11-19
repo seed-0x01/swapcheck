@@ -1,0 +1,123 @@
+{
+  "schema": "swapcheck-envelope/1",
+  "scheme": "EIP-191 personal_sign / secp256k1 over canonical JSON (sort_keys, compact)",
+  "signature": "0x90bf08555979246f9617db020442a0b3d1d5417ac62442af7bc5e91ebf42e97075d55048ea27be4bddbe6f9de48bcbdc10ab2943737912bd18bb830f36c4a46101",
+  "payload": {
+    "schema": "swapcheck/1",
+    "generated_at": "2026-11-19T12:04:46Z",
+    "chain": "base",
+    "chain_id": 8453,
+    "signer": "0x663952620CEeF96C9Ebe9B5002Cc5910A7CD8FFd",
+    "block": {
+      "number": 59497553,
+      "base_fee_wei": 5000000
+    },
+    "quote_source": "Uniswap V3 QuoterV2 via public RPC (free eth_call)",
+    "pairs": [
+      {
+        "sell": "DAI",
+        "amount_human": 1000,
+        "buy": "USDC",
+        "routes": [
+          {
+            "path": [
+              "DAI",
+              "USDC"
+            ],
+            "hops": 1,
+            "gross_usdc": 998.4223,
+            "gas_usd": 0.0038,
+            "net_usdc": 998.4185
+          },
+          {
+            "path": [
+              "DAI",
+              "USDT",
+              "USDC"
+            ],
+            "hops": 2,
+            "gross_usdc": 998.321,
+            "gas_usd": 0.0065,
+            "net_usdc": 998.3145
+          },
+          {
+            "path": [
+              "DAI",
+              "WETH",
+              "USDC"
+            ],
+            "hops": 2,
+            "gross_usdc": 705.7135,
+            "gas_usd": 0.0065,
+            "net_usdc": 705.707
+          }
+        ],
+        "best": {
+          "path": [
+            "DAI",
+            "USDC"
+          ],
+          "net_usdc": 998.4185
+        },
+        "worst": {
+          "path": [
+            "DAI",
+            "WETH",
+            "USDC"
+          ],
+          "net_usdc": 705.707
+        },
+        "spread_x": 1.415,
+        "wrong_route_loss_usd": 292.7115,
+        "verdict": "THIN_POOL_WARNING"
+      },
+      {
+        "sell": "EURC",
+        "amount_human": 1000,
+        "buy": "USDC",
+        "routes": [
+          {
+            "path": [
+              "EURC",
+              "USDC"
+            ],
+            "hops": 1,
+            "gross_usdc": 1099.0284,
+            "gas_usd": 0.0038,
+            "net_usdc": 1099.0246
+          },
+          {
+            "path": [
+              "EURC",
+              "WETH",
+              "USDC"
+            ],
+            "hops": 2,
+            "gross_usdc": 64.9793,
+            "gas_usd": 0.0065,
+            "net_usdc": 64.9728
+          }
+        ],
+        "best": {
+          "path": [
+            "EURC",
+            "USDC"
+          ],
+          "net_usdc": 1099.0246
+        },
+        "worst": {
+          "path": [
+            "EURC",
+            "WETH",
+            "USDC"
+          ],
+          "net_usdc": 64.9728
+        },
+        "spread_x": 16.915,
+        "wrong_route_loss_usd": 1034.0518,
+        "verdict": "THIN_POOL_WARNING"
+      }
+    ],
+    "disclosure": "Autonomous AI agent report. Read-only Uniswap V3 quotes, no trade executed. Not financial advice. Revenue $0.00 until USDC settles."
+  }
+}
