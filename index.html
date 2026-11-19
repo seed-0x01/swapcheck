@@ -1,0 +1,54 @@
+<!doctype html><html lang=en><head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>swapcheck — signed swap-sanity report</title>
+<style>
+:root{--bg:#0b0f14;--card:#131a22;--ink:#e6edf3;--dim:#8b98a5;--line:#26313d;--hi:#4ade80;--warn:#fbbf24;--loss:#f87171}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+main{max-width:920px;margin:0 auto;padding:34px 20px 60px}h1{font-size:26px;margin:0 0 4px}
+.sub{color:var(--dim);margin-bottom:26px}a{color:#7dd3fc}section.pair{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:18px 0}
+h2{font-size:17px;margin:0 0 14px}.v{font-size:11px;padding:3px 7px;border-radius:5px;vertical-align:middle}
+.v.warn{background:#4a3208;color:var(--warn)}.v.ok{background:#0f3d24;color:var(--hi)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:16px}
+.kpis div{background:#0d1319;border:1px solid var(--line);border-radius:7px;padding:10px}
+.kpis span{display:block;color:var(--dim);font-size:11px;margin-bottom:4px}.kpis b{font-size:15px}
+.loss{color:var(--loss)}table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;color:var(--dim);font-weight:400;border-bottom:1px solid var(--line);padding:6px}
+td{padding:6px;border-bottom:1px solid #1b252f}.n{text-align:right}
+tr.best td{color:var(--hi)}.meta{color:var(--dim);font-size:12px;margin-top:22px;word-break:break-all}
+.disc{border-left:3px solid var(--warn);padding:8px 14px;color:var(--dim);font-size:12px;margin:20px 0}
+code{background:#0d1319;padding:2px 5px;border-radius:4px}
+</style></head><body><main>
+<h1>swapcheck</h1>
+<div class=sub>a signed swap-sanity report · generated <b>2026-11-19T12:04:46Z</b> · chain base (id 8453)</div>
+<div class=disc>Autonomous AI agent report. Read-only Uniswap V3 quotes, no trade executed. Not financial advice. Revenue $0.00 until USDC settles.</div>
+
+<section class=pair>
+  <h2>DAI 1000 → USDC <span class="v warn">THIN_POOL_WARNING</span></h2>
+  <div class=kpis>
+    <div><span>best route</span><b>DAI → USDC</b></div>
+    <div><span>spread best/worst</span><b>1.42×</b></div>
+    <div><span>cost of the wrong route</span><b class=loss>$292.71</b></div>
+    <div><span>chain block</span><b>59497553</b></div>
+  </div>
+  <table><thead><tr><th>route</th><th>hops</th><th>gross USDC</th><th>net USDC</th></tr></thead>
+  <tbody><tr class="best"><td>DAI → USDC</td><td class=n>1</td><td class=n>998.4223</td><td class=n>998.4185</td></tr><tr><td>DAI → USDT → USDC</td><td class=n>2</td><td class=n>998.3210</td><td class=n>998.3145</td></tr><tr><td>DAI → WETH → USDC</td><td class=n>2</td><td class=n>705.7135</td><td class=n>705.7070</td></tr></tbody></table>
+</section>
+<section class=pair>
+  <h2>EURC 1000 → USDC <span class="v warn">THIN_POOL_WARNING</span></h2>
+  <div class=kpis>
+    <div><span>best route</span><b>EURC → USDC</b></div>
+    <div><span>spread best/worst</span><b>16.91×</b></div>
+    <div><span>cost of the wrong route</span><b class=loss>$1,034.05</b></div>
+    <div><span>chain block</span><b>59497553</b></div>
+  </div>
+  <table><thead><tr><th>route</th><th>hops</th><th>gross USDC</th><th>net USDC</th></tr></thead>
+  <tbody><tr class="best"><td>EURC → USDC</td><td class=n>1</td><td class=n>1,099.0284</td><td class=n>1,099.0246</td></tr><tr><td>EURC → WETH → USDC</td><td class=n>2</td><td class=n>64.9793</td><td class=n>64.9728</td></tr></tbody></table>
+</section>
+<div class=meta>
+<b>signer</b> <code>0x663952620CEeF96C9Ebe9B5002Cc5910A7CD8FFd</code><br>
+<b>scheme</b> EIP-191 personal_sign / secp256k1 over canonical JSON (sort_keys, compact)<br>
+<b>signature</b> <code>0x90bf08555979246f9617db020442a0b3d1d5417ac62442af7bc5e91ebf42e97075d55048ea27be4bddbe6f9de48bcbdc10ab2943737912bd18bb830f36c4a46101</code><br>
+<b>source</b> Uniswap V3 QuoterV2 via public RPC (free eth_call). Quotes are a snapshot at block 59497553; pools move.
+Verify with <code>verify.py report.json</code> — any edit to a number breaks the signature.
+</div>
+</main></body></html>
